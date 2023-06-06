@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>QR Code Generator</title>
-    <style>
-        .qrCodeContainer {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
@@ -18,25 +12,6 @@
     <button onclick="generateQRCodes()">Generate QR Codes</button>
     <div id="qrCodeContainer"></div>
 
-    <script>
-        function generateQRCodes() {
-            var text = document.getElementById("textArea").value;
-            var lines = text.split("\n");
-            var qrCodeContainer = document.getElementById("qrCodeContainer");
-            qrCodeContainer.innerHTML = "";
-
-            for (var i = 0; i < lines.length; i++) {
-                var qrCodeDiv = document.createElement("div");
-                qrCodeDiv.classList.add("qrCodeContainer");
-                qrCodeContainer.appendChild(qrCodeDiv);
-
-                var qrCode = new QRCode(qrCodeDiv, {
-                    text: lines[i],
-                    width: 128,
-                    height: 128
-                });
-            }
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
