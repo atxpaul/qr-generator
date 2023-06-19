@@ -29,3 +29,12 @@ function generateQRCodes() {
         }
     }
 }
+function printResult() {
+  var qrCodeContainer = document.getElementById("qrCodeContainer");
+  var printWindow = window.open("", "_blank");
+  printWindow.document.write("<html><head><title>Resultado</title></head><body>");
+  printWindow.document.write(qrCodeContainer.innerHTML);
+  printWindow.document.write("</body></html>");
+  printWindow.document.close();
+  printWindow.print();
+}
